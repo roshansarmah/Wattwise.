@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WattWise Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="WattWise Logo" width="80" />
+    <h1>WattWise</h1>
+    <p>Smart Power Monitoring Dashboard</p>
+  </header>
+
+  <main class="container">
+    <section class="graph">
+      <h2>Live Energy Consumption</h2>
+      <canvas id="powerChart" width="600" height="300"></canvas>
+    </section>
+
+    <section class="stats">
+      <h2>Billing Info</h2>
+      <p>Units Consumed: <span id="units">0.0000</span> kWh</p>
+      <p>Total Cost: ₹<span id="cost">0.00</span></p>
+      <button onclick="downloadBill()">Download Bill (PDF)</button>
+    </section>
+
+    <section class="appliances">
+      <h2>Appliance-wise Usage</h2>
+      <ul id="applianceData">
+        <!-- Live data goes here -->
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
